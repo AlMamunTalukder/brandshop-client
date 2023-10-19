@@ -1,13 +1,45 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+// import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+// import PrivateHook from "./components/Hook/PrivateHook.jsx";
+import AddProduct from "./components/AddProduct/AddProduct";
+import Login from "./components/Login/Login.jsx";
+import Registration from "./components/Registration/Registration.jsx";
+import MyCart from "./components/MyCart/MyCart.jsx";
+import Error from "./components/Error/Error.jsx";
+import MainLayout from "./components/MainLayout/MainLayout.jsx";
+import Home from "./components/Home/Home.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <MainLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+
+      {
+        path: "/addProducts",
+        element: <AddProduct />,
+      },
+      {
+        path: "/myCarts",
+        element: <MyCart />,
+      },
+      {
+        path: "/signIn",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Registration />,
+      },
+    ],
   },
 ]);
 

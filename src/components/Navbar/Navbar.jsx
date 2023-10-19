@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div>
@@ -25,14 +27,47 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Home</a>
+                <NavLink
+                  to="/"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-[#FF444A] underline"
+                      : ""
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-                <a>Add Product</a>
+                <NavLink
+                  to="/addProducts"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-[#FF444A] underline"
+                      : ""
+                  }
+                >
+                  Add Product
+                </NavLink>
               </li>
 
               <li>
-                <a>My Cart</a>
+                <NavLink
+                  to="/myCarts"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-[#FF444A] underline"
+                      : ""
+                  }
+                >
+                  My Cart
+                </NavLink>
               </li>
               <div className="">
                 <a className="btn bg-yellow-300 rounded-full text-black hover:text-white ">
@@ -46,21 +81,56 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Home</a>
+              <NavLink
+                to="/"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-[#FF444A] underline"
+                    : ""
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <a>Add Product</a>
+              <NavLink
+                to="/addproducts"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-[#FF444A] underline"
+                    : ""
+                }
+              >
+                Add Product
+              </NavLink>
             </li>
 
             <li>
-              <a>My Cart</a>
+              <NavLink
+                to="/myCarts"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-[#FF444A] underline"
+                    : ""
+                }
+              >
+                My Cart
+              </NavLink>
             </li>
           </ul>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <a className="btn bg-yellow-300 rounded-full text-black hover:text-white">
-            Sign In
-          </a>
+          <NavLink to="/signIn">
+            <a className="btn bg-yellow-300 rounded-full text-black hover:text-white">
+              Sign In
+            </a>
+          </NavLink>
         </div>
       </div>
     </div>

@@ -1,9 +1,6 @@
-import Navbar from "../Navbar/Navbar";
-
 const Header = () => {
   return (
     <div className="space-y-5">
-      <Navbar></Navbar>
       <div>
         <div
           className="hero min-h-screen"
