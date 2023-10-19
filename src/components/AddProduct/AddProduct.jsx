@@ -1,8 +1,50 @@
+import swal from "sweetalert";
+
 const AddProduct = () => {
+  const handleAddProduct = (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    const name = form.name.value;
+    const BName = form.BName.value;
+    const type = form.type.value;
+    const price = form.price.value;
+    const SDescription = form.SDescription.value;
+    const rating = form.rating.value;
+    const photo = form.photo.value;
+
+    const newProduct = {
+      name,
+      BName,
+      type,
+      price,
+      SDescription,
+      rating,
+      photo,
+    };
+    console.log(newProduct);
+
+    fetch("http://localhost:5000/addProduct", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        if (data.insertedId) {
+          swal("well", "User Added Successfully", "success");
+        }
+      });
+  };
+
   return (
     <div>
       <div className="bg-[#F3F4F0] min-h-screen">
-        <form>
+        <form onSubmit={handleAddProduct}>
           <div className="container mx-auto p-4">
             <div className="w-full max-w-lg mx-auto">
               <div className="grid grid-cols-2 gap-4">

@@ -12,7 +12,7 @@ import Error from "./components/Error/Error.jsx";
 import MainLayout from "./components/MainLayout/MainLayout.jsx";
 import Home from "./components/Home/Home.jsx";
 import AuthProvider from "./components/Hook/AuthProvider";
-import PrivateHook from "./components/Hook/PrivateHook";
+// import PrivateHook from "./components/Hook/PrivateHook";
 
 const router = createBrowserRouter([
   {
@@ -28,9 +28,9 @@ const router = createBrowserRouter([
       {
         path: "/addProducts",
         element: (
-          <PrivateHook>
-            <AddProduct />
-          </PrivateHook>
+          // <PrivateHook>
+          <AddProduct />
+          // </PrivateHook>
         ),
       },
       {
