@@ -11,6 +11,8 @@ import MyCart from "./components/MyCart/MyCart.jsx";
 import Error from "./components/Error/Error.jsx";
 import MainLayout from "./components/MainLayout/MainLayout.jsx";
 import Home from "./components/Home/Home.jsx";
+import AuthProvider from "./components/Hook/AuthProvider";
+import PrivateHook from "./components/Hook/PrivateHook";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +27,11 @@ const router = createBrowserRouter([
 
       {
         path: "/addProducts",
-        element: <AddProduct />,
+        element: (
+          <PrivateHook>
+            <AddProduct />
+          </PrivateHook>
+        ),
       },
       {
         path: "/myCarts",
@@ -45,6 +51,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );
