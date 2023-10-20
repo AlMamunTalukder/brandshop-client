@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const VarityofCars = () => {
   return (
     <div>
@@ -18,9 +20,11 @@ const VarityofCars = () => {
               <figure className="h-30 w-full">
                 <img src="https://i.ibb.co/5rZYQNW/car-img1.png" alt="#" />
               </figure>
-              <h3 className="text-black bg-yellow-300 font-bold text-4xl h-20 text-center justify-center pt-5 mt-8">
-                Hundai
-              </h3>
+              <Link to="/brandCars">
+                <h3 className="text-black bg-yellow-300 font-bold text-4xl h-20 text-center justify-center pt-5 mt-8">
+                  Hundai
+                </h3>
+              </Link>
             </div>
 
             <div className="pt-8">
@@ -48,9 +52,11 @@ const VarityofCars = () => {
               <figure className="h-30 mt-[11px] w-full">
                 <img src="https://i.ibb.co/pXLm155/image.png" alt="#" />
               </figure>
-              <h3 className="text-black bg-yellow-300 font-bold text-4xl h-20 text-center justify-center pt-5 mt-8">
-                Toyota
-              </h3>
+              <Link to="/brandCars">
+                <h3 className="text-black bg-yellow-300 font-bold text-4xl h-20 text-center justify-center pt-5 mt-8">
+                  Toyota
+                </h3>
+              </Link>
             </div>
 
             <div className="pt-8">

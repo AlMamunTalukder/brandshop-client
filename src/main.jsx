@@ -12,6 +12,9 @@ import Error from "./components/Error/Error.jsx";
 import MainLayout from "./components/MainLayout/MainLayout.jsx";
 import Home from "./components/Home/Home.jsx";
 import AuthProvider from "./components/Hook/AuthProvider";
+import BrandCars from "./components/BrandCars/BrandCars";
+import CarDetails from "./components/Details/CarDetails";
+
 // import PrivateHook from "./components/Hook/PrivateHook";
 
 const router = createBrowserRouter([
@@ -45,6 +48,25 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Registration />,
       },
+      {
+        path: "/brandCars",
+        element: <BrandCars />,
+        loader: () =>
+          fetch("https://brand-shop-server-ivory.vercel.app/addProduct"),
+      },
+      {
+        path: "/carDetails/:id",
+        element: <CarDetails />,
+        loader: ({ params }) =>
+          fetch(
+            `https://brand-shop-server-ivory.vercel.app/addProduct/${params.id}`
+          ),
+      },
+      // {
+      //   path: "/carUpdate",
+      //   element: <CarDetails />,
+      //   loader: () => fetch("https://brand-shop-server-ivory.vercel.app/addProduct"),
+      // },
     ],
   },
 ]);
