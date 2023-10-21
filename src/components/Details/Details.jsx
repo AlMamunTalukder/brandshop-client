@@ -1,17 +1,36 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
 import Swal from "sweetalert2";
+
+import { AuthContext } from "./../Hook/AuthProvider";
 
 /* eslint-disable react/prop-types */
 const Details = ({ car }) => {
+  const { user } = useContext(AuthContext) || {};
+  const email = user.email;
+  console.log(email);
+
   const { name, BName, type, price, SDescription, rating, photo } = car || {};
 
-  const addToCart = ({ cart }) => {
-    fetch("https://brand-shop-server-ivory.vercel.app/addToCart", {
+  console.log(user);
+
+  const addToCart = () => {
+    const carCart = {
+      name,
+      BName,
+      type,
+      price,
+      SDescription,
+      rating,
+      photo,
+      email,
+    };
+
+    fetch("https://brand-shop-server-ivory.vercel.app/getCartData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(cart),
+      body: JSON.stringify(carCart),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -45,11 +64,9 @@ const Details = ({ car }) => {
           <br />
           <p>{SDescription}</p>
           <div className="card-actions justify-end">
-            <Link to={"/addToCart"}>
-              <button className="btn btn-primary" onClick={addToCart}>
-                Add to Cart
-              </button>
-            </Link>
+            <button className="btn btn-primary" onClick={addToCart}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>

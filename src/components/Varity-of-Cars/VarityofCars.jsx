@@ -31,18 +31,22 @@ const VarityofCars = () => {
               <figure className="h-30 w-full">
                 <img src="https://i.ibb.co/pz5GTjx/car-img2.png" alt="#" />
               </figure>
-              <h3 className="text-black bg-yellow-300 font-bold text-4xl h-20 text-center justify-center pt-5 mt-8">
-                Audi
-              </h3>
+              <Link to="/brandCars">
+                <h3 className="text-black bg-yellow-300 font-bold text-4xl h-20 text-center justify-center pt-5 mt-8">
+                  Audi
+                </h3>
+              </Link>
             </div>
 
             <div className="pt-8">
               <figure className="h-30 w-full">
                 <img src="https://i.ibb.co/Yd2hnjB/car-img3.png" alt="#" />
               </figure>
-              <h3 className="text-black bg-yellow-300 font-bold text-4xl h-20 text-center justify-center pt-5 mt-8">
-                BMW
-              </h3>
+              <Link to="/brandCars">
+                <h3 className="text-black bg-yellow-300 font-bold text-4xl h-20 text-center justify-center pt-5 mt-8">
+                  BMW
+                </h3>
+              </Link>
             </div>
           </div>
         </div>
@@ -72,9 +76,11 @@ const VarityofCars = () => {
               <figure className="h-30 mt-[22px] w-full">
                 <img src="https://i.ibb.co/tm4YrZV/image.png" alt="#" />
               </figure>
-              <h3 className="text-black bg-yellow-300 font-bold text-4xl h-20 text-center justify-center pt-5 mt-8">
-                Nissan
-              </h3>
+              <Link to="/brandCars">
+                <h3 className="text-black bg-yellow-300 font-bold text-4xl h-20 text-center justify-center pt-5 mt-8">
+                  Nissan
+                </h3>
+              </Link>
             </div>
           </div>
         </div>

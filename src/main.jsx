@@ -15,7 +15,7 @@ import AuthProvider from "./components/Hook/AuthProvider";
 import BrandCars from "./components/BrandCars/BrandCars";
 import CarDetails from "./components/Details/CarDetails";
 
-// import PrivateHook from "./components/Hook/PrivateHook";
+import PrivateHook from "./components/Hook/PrivateHook";
 import Update from "./components/Update/Update";
 
 const router = createBrowserRouter([
@@ -32,15 +32,12 @@ const router = createBrowserRouter([
       {
         path: "/addProducts",
         element: (
-          // <PrivateHook>
-          <AddProduct />
-          // </PrivateHook>
+          <PrivateHook>
+            <AddProduct />
+          </PrivateHook>
         ),
       },
-      {
-        path: "/myCarts",
-        element: <MyCart />,
-      },
+
       {
         path: "/signIn",
         element: <Login />,
@@ -72,10 +69,10 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "/addtoCart",
+        path: "/myCarts",
         element: <MyCart />,
         loader: () =>
-          fetch("https://brand-shop-server-ivory.vercel.app/addProduct"),
+          fetch("https://brand-shop-server-ivory.vercel.app/getCartData"),
       },
     ],
   },
