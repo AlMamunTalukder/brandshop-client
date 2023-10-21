@@ -78,9 +78,33 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <div className="">
-                <a className="btn bg-yellow-300 rounded-full text-black hover:text-white ">
-                  Sign In
-                </a>
+                {user ? (
+                  <div className="flex items-center">
+                    {user.photoURL ? (
+                      <img
+                        src={user.photoURL}
+                        alt={`${user.displayName}'s profile`}
+                        className="w-10 h-10 rounded-full mr-2"
+                      />
+                    ) : (
+                      <div className="w-10 h-10 rounded-full bg-gray-500 mr-2"></div>
+                    )}
+                    <p className="mr-2">{user.displayName}</p>
+                    {/* <p>{user.email}</p> */}
+                    <button
+                      onClick={handleLogOut}
+                      className="btn btn-primary ml-2"
+                    >
+                      Log Out
+                    </button>
+                  </div>
+                ) : (
+                  <NavLink to="/signIn">
+                    <a className="btn bg-yellow-300 rounded-full text-black hover:text-white">
+                      Sign In
+                    </a>
+                  </NavLink>
+                )}
               </div>
             </ul>
           </div>

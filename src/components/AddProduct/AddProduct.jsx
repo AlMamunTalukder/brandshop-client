@@ -111,7 +111,6 @@ const AddProduct = () => {
                     type="text"
                     id="rating"
                     name="rating"
-                    placeholder="write only number like- 2, 3, 4"
                     className="w-full px-3 py-2 border rounded-lg"
                   />
                 </div>

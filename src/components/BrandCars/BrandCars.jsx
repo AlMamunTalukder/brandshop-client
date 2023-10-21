@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AllCarsCards from "./AllCarsCards";
+import Slider from "../Slider/Slider";
 
 const BrandCars = () => {
   const loadedCars = useLoaderData();
@@ -9,6 +10,7 @@ const BrandCars = () => {
 
   return (
     <div className="m-20">
+      <Slider />
       <div className="grid md:grid-cols-2 gap-4">
         {cars.map((car) => (
           <AllCarsCards
