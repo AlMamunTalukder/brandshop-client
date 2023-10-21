@@ -54,7 +54,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/carDetails/:id",
-        element: <CarDetails />,
+        element: (
+          <PrivateHook>
+            <CarDetails />
+          </PrivateHook>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://brand-shop-server-ivory.vercel.app/addProduct/${params.id}`
@@ -70,7 +74,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/myCarts",
-        element: <MyCart />,
+        element: (
+          <PrivateHook>
+            <MyCart />
+          </PrivateHook>
+        ),
         loader: () =>
           fetch("https://brand-shop-server-ivory.vercel.app/getCartData"),
       },
