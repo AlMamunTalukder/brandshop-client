@@ -1,8 +1,12 @@
-# React + Vite
+# This is a Automotive project where try to create a car website with various brands.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the live link of my Website - [https://brand-shop-6418c.web.app/]
 
-Currently, two official plugins are available:
+In Below, there is at least 5 points of my project :
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Navbar with Login registration
+- 6 brands of famous car.
+- Show specific car when click on brand name.
+- Show details about any specific car
+- add to cart this.
+- Delete the product.

@@ -71,6 +71,12 @@ const router = createBrowserRouter([
             `https://brand-shop-server-ivory.vercel.app/addProduct/${params.id}`
           ),
       },
+      {
+        path: "/addtoCart",
+        element: <MyCart />,
+        loader: () =>
+          fetch("https://brand-shop-server-ivory.vercel.app/addProduct"),
+      },
     ],
   },
 ]);
