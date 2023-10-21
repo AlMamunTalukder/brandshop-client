@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 const Details = ({ car }) => {
-  const { _id, name, BName, type, price, SDescription, rating, photo } =
-    car || {};
+  const { name, BName, type, price, SDescription, rating, photo } = car || {};
 
   return (
     <div>
       <div className="card lg:card-side bg-base-100 shadow-xl">
-        <img src={photo} alt="Album" />
-
+        <div className="w-[500px] h-60 ">
+          <img src={photo} alt="Album" />
+        </div>
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
           <p>Brand: {BName}</p>

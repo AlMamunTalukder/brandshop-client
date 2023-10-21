@@ -16,6 +16,7 @@ import BrandCars from "./components/BrandCars/BrandCars";
 import CarDetails from "./components/Details/CarDetails";
 
 // import PrivateHook from "./components/Hook/PrivateHook";
+import Update from "./components/Update/Update";
 
 const router = createBrowserRouter([
   {
@@ -62,11 +63,14 @@ const router = createBrowserRouter([
             `https://brand-shop-server-ivory.vercel.app/addProduct/${params.id}`
           ),
       },
-      // {
-      //   path: "/carUpdate",
-      //   element: <CarDetails />,
-      //   loader: () => fetch("https://brand-shop-server-ivory.vercel.app/addProduct"),
-      // },
+      {
+        path: "/updateCar/:id",
+        element: <Update />,
+        loader: ({ params }) =>
+          fetch(
+            `https://brand-shop-server-ivory.vercel.app/addProduct/${params.id}`
+          ),
+      },
     ],
   },
 ]);

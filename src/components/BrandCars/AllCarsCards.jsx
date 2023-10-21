@@ -18,7 +18,7 @@ const AllCarsCards = ({ car }) => {
             <Link to={`/carDetails/${_id}`}>
               <button className="btn">Details</button>
             </Link>
-            <Link to="/carUpdate">
+            <Link to={`/updateCar/${_id}`}>
               <button className="btn">Update</button>
             </Link>
           </div>

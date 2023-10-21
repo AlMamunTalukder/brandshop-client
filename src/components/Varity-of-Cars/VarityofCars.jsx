@@ -4,13 +4,13 @@ const VarityofCars = () => {
   return (
     <div>
       <div className="bg-[#fff] mt-24">
-        <div className="mb-16">
+        <div className="mb-16 text-center">
           <h2 className="text-black font-bold mb-5 text-5xl">
             VARIETY OF CARS
           </h2>
           <span className="text-[#23262d] text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna
+            These are a wide variety of cars available, each designed to meet
+            specific needs and preferences.
           </span>
         </div>
 
